@@ -121,6 +121,7 @@ struct t_config_option *config_look_highlight;
 struct t_config_option *config_look_highlight_regex;
 struct t_config_option *config_look_highlight_tags;
 struct t_config_option *config_look_hotlist_add_conditions;
+struct t_config_option *config_look_hotlist_auto_remove;
 struct t_config_option *config_look_hotlist_buffer_separator;
 struct t_config_option *config_look_hotlist_count_max;
 struct t_config_option *config_look_hotlist_count_min_msg;
@@ -2819,6 +2820,12 @@ config_weechat_init_options ()
            "buffer is not visible on screen (not displayed in any window)"),
         NULL, 0, 0, "${away} || ${buffer.num_displayed} == 0",
         NULL, 0,
+        NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+    config_look_hotlist_auto_remove = config_file_new_option (
+        weechat_config_file, ptr_section,
+        "hotlist_auto_remove", "boolean",
+        N_("remove buffer from hotlist automatically"),
+        NULL, 0, 0, "on", NULL, 0,
         NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
     config_look_hotlist_buffer_separator = config_file_new_option (
         weechat_config_file, ptr_section,

@@ -1426,6 +1426,12 @@ gui_input_jump_smart (struct t_gui_buffer *buffer)
     {
         if (gui_hotlist)
         {
+            /*if (CONFIG_BOOLEAN(config_look_hotlist_auto_remove))*/
+            /*{*/
+            /*}*/
+            /*else*/
+            /*{*/
+            /*}*/
             if (!gui_hotlist_initial_buffer)
                 gui_hotlist_initial_buffer = window->buffer;
             gui_window_switch_to_buffer (window, gui_hotlist->buffer, 1);

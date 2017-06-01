@@ -1226,7 +1226,9 @@ gui_window_switch_to_buffer (struct t_gui_window *window,
     gui_buffer_set_active_buffer (buffer);
     gui_buffer_compute_num_displayed ();
 
-    if (!weechat_upgrading && (old_buffer != buffer))
+    if (!weechat_upgrading
+        && (old_buffer != buffer)
+        && CONFIG_BOOLEAN(config_look_hotlist_auto_remove))
         gui_hotlist_remove_buffer (buffer, 0);
 
     /* remove unused bars and add missing bars in window */
